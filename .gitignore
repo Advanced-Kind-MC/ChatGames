@@ -6,3 +6,4 @@ target
 .settings
 .vscode
 .vscode/settings.json
+dependency-reduced-pom.xml

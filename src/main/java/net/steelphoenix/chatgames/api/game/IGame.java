@@ -1,5 +1,7 @@
 package net.steelphoenix.chatgames.api.game;
 
+import java.util.UUID;
+
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -25,6 +27,14 @@ public interface IGame {
 	 * Makes it unwinnable.
 	 */
 	public void setInactive();
+	/**
+	 * Adds a winner.
+	 * Deactivates this game when the 3rd player wins
+	 * Deactivating it makes it unwinnable.
+	 * @param player the UUID of the Player that wins
+	 * @return the position of the winner, 0 if he already won
+	 */
+	public int setWinner(@NotNull UUID player);
 	/**
 	 * End this game.
 	 */

@@ -29,7 +29,7 @@ public class Message {
 	private Message() {
 		// Nothing
 	}
-	@ConfigValue(path = "announcement.answer", def = "&a&lGames &8&l>> &7No one won the game! The answer was: &e%answer%")
+	@ConfigValue(path = "announcement.answer", def = "&a&lGames &8&l>> &7%winner% Players answered correctly! The answer was: &e%answer%")
 	public static String ANNOUNCEMENT_ANSWER;
 	@ConfigValue(path = "announcement.game-over", def = "&a&lGames &8&l>> &7The Chat Games have ended.")
 	public static String ANNOUNCEMENT_GAMEOVER;
@@ -37,7 +37,7 @@ public class Message {
 	public static String ANNOUNCEMENT_NO_PLAYERS;
 	@ConfigValue(path = "announcement.win-time", def = "&a&lGames &8&l>> &7Time: &e%time% seconds")
 	public static String ANNOUNCEMENT_TIME;
-	@ConfigValue(path = "announcement.win", def = "&a&lGames &8&l>> &e%player% &7has won the game!")
+	@ConfigValue(path = "announcement.win", def = "&a&lGames &8&l>> &e%player% &7has answered &e%position%&7!")
 	public static String ANNOUNCEMENT_WIN;
 	@ConfigValue(path = "command.current.answer", def = "&fAnswer: &7&o'%answer%&7&o'")
 	public static String COMMAND_CURRENT_ANSWER;

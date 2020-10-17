@@ -1,7 +1,12 @@
 package net.steelphoenix.chatgames;
 
 import java.text.NumberFormat;
+import java.util.HashSet;
 import java.util.Locale;
+import java.util.UUID;
+
+import org.bukkit.Bukkit;
+import org.jetbrains.annotations.NotNull;
 
 import net.steelphoenix.chatgames.api.ICGPlugin;
 import net.steelphoenix.chatgames.api.event.ChatGameExpireEvent;
@@ -12,6 +17,7 @@ import net.steelphoenix.core.util.Validate;
 
 public class Game implements IGame {
 	private static final NumberFormat FORMAT = NumberFormat.getInstance(Locale.US);
+	private final HashSet<UUID> winner = new HashSet<>();
 	private final ICGPlugin plugin;
 	private final Question question;
 	private final long start = System.currentTimeMillis();
@@ -39,6 +45,15 @@ public class Game implements IGame {
 		this.active = false;
 	}
 	@Override
+	public final synchronized int setWinner(@NotNull UUID player) {
+		if(winner.contains(player))
+			return 0;
+		winner.add(player);
+		if(winner.size() >= 3)
+			end();
+		return winner.size();
+	}
+	@Override
 	public final long getStartTime() {
 		return start;
 	}
@@ -51,8 +66,10 @@ public class Game implements IGame {
 
 		setInactive();
 		((ChatGames) plugin).broadcast(Message.ANNOUNCEMENT_GAMEOVER);
-		((ChatGames) plugin).broadcast(Message.ANNOUNCEMENT_ANSWER.replace("%answer%", question.getAnswer()));
+		((ChatGames) plugin).broadcast(Message.ANNOUNCEMENT_ANSWER.replace("%answer%", question.getAnswer()).replace("%winner%",String.valueOf(winner.size())));
+		Bukkit.getScheduler().runTask(plugin,()->{
 		plugin.getServer().getPluginManager().callEvent(new ChatGameExpireEvent(this));
+		});
 	}
 	private final boolean checkPlayerRequirement() {
 		int required = plugin.getConfiguration().getInt("required-players");

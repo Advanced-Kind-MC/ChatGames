@@ -22,12 +22,14 @@ public class AsyncChatGameWinEvent extends ChatGameEvent {
 	private final String answer;
 	private final long answerTime;
 	private String win;
-	public AsyncChatGameWinEvent(IGame game, Player player, String answer, long answerTime) {
+	private int placing;
+	public AsyncChatGameWinEvent(IGame game, Player player, String answer, long answerTime, int placing) {
 		super(game, true);
 		this.player = Validate.notNull(player, "Player cannot be null");
 		this.answer = Validate.notNull(answer, "Answer cannot be null");
 		this.answerTime = answerTime;
 		this.win = Message.WIN_MESSAGE;
+		this.placing = placing;
 
 		Validate.isTrue(answerTime >= 0L, "Answer time cannot be negative");
 	}
@@ -77,6 +79,14 @@ public class AsyncChatGameWinEvent extends ChatGameEvent {
 	@Contract("val >= 0L")
 	public final long getAnswerTime() {
 		return answerTime;
+	}
+	/**
+	 * Get the Placing.
+	 * @return the place the player achieved
+	 */
+	@Contract("val >= 0L")
+	public final int getPlacing() {
+		return placing;
 	}
 	// Note that these methods are not marked final so the (legacy) ChatGameWinEvent can override it with a different handler list
 	@NotNull

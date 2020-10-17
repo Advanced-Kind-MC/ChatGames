@@ -19,7 +19,7 @@ public class ChatListener implements Listener {
 	public ChatListener(ICGPlugin plugin) {
 		this.plugin = Validate.notNull(plugin, "Plugin cannot be null");
 	}
-	@EventHandler(priority = EventPriority.LOWEST)
+	@EventHandler(priority = EventPriority.MONITOR)
 	public final void onChat(AsyncPlayerChatEvent event) {
 		IGame game = plugin.getTask().getCurrentGame();
 
@@ -37,18 +37,22 @@ public class ChatListener implements Listener {
 		if (!game.getQuestion().isCorrect(message)) {
 			return;
 		}
-
-		game.setInactive();
+		event.setCancelled(true);
+		int position = game.setWinner(player.getUniqueId());
+		if(position == 0){
+			return;
+		}
 
 		// Increment the player's score
-		plugin.getLeaderboard().increment(player.getUniqueId());
+		for(int i = 3; i >= position; --i)
+			plugin.getLeaderboard().increment(player.getUniqueId());
 
 		// Broadcast the win
-		((ChatGames) plugin).broadcast(Message.ANNOUNCEMENT_WIN.replace("%player%", player.getName()));
+		((ChatGames) plugin).broadcast(Message.ANNOUNCEMENT_WIN.replace("%player%", player.getName()).replace("%position%",Util.getOrdinal(position)));
 		((ChatGames) plugin).broadcast(Message.ANNOUNCEMENT_TIME.replace("%time%", time));
 
 		// Event calling
-		AsyncChatGameWinEvent gameEvent = new AsyncChatGameWinEvent(game, player, message, answertime);
+		AsyncChatGameWinEvent gameEvent = new AsyncChatGameWinEvent(game, player, message, answertime, position);
 		plugin.getServer().getPluginManager().callEvent(gameEvent);
 
 		// Send the winning player a message if defined

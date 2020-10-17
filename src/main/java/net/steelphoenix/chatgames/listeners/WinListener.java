@@ -38,14 +38,14 @@ public class WinListener implements Listener {
 			// Check if Vault is enabled for economy rewards
 			if (vault != null && vault.isHooked()) {
 				// Deposit money if amount to give is positive
-				double amount = plugin.getConfiguration().getDouble("reward-default.money");
+				double amount = plugin.getConfiguration().getDouble("reward-default."+event.getPlacing()+".money");
 				if (amount > 0D) {
 					vault.getEconomy().depositPlayer(event.getPlayer(), amount);
 				}
 			}
 
 			// Execute commands if any are defined
-			List<String> cmds = plugin.getConfiguration().getStringList("reward-default.commands");
+			List<String> cmds = plugin.getConfiguration().getStringList("reward-default."+event.getPlacing()+".commands");
 			if (cmds != null) {
 				cmds.forEach(command -> plugin.getServer().dispatchCommand(plugin.getServer().getConsoleSender(), command.replace("%player%", event.getPlayer().getName())));
 			}

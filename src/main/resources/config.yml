@@ -4,9 +4,18 @@ required-players: -1
 # Default rewards
 reward-default:
   enabled: true
-  money: 10000 # Requires Vault
-  commands:
-    - 'give %player% minecraft:diamond 3'
+  1:
+    money: 10000 # Requires Vault
+    commands:
+      - 'give %player% minecraft:diamond 3'
+  2: 
+    money: 10000 # Requires Vault
+    commands:
+      - 'give %player% minecraft:diamond 3'
+  3: 
+    money: 10000 # Requires Vault
+    commands:
+      - 'give %player% minecraft:diamond 3'
 
 # Enable/disable default question types
 enable-alphabet: true

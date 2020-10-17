@@ -2,11 +2,11 @@
 # How to use: hex #ABCDEF -> &x&A&B&C&D&E&F
 message:
   announcement:
-    answer: '&a&lGames &8&l>> &7No one won the game! The answer was: &e%answer%'
+    answer: '&a&lGames &8&l>> &7%winner% Players answered correctly! The answer was: &e%answer%'
     game-over: '&a&lGames &8&l>> &7The Chat Games have ended.'
     no-players: '&a&lGames &8&l>> &7Not enough players are currently online &e(%online%/%required%)&7.'
     win-time: '&a&lGames &8&l>> &7Time: &e%time% seconds'
-    win: '&a&lGames &8&l>> &e%player% &7has won the game!'
+    win: '&a&lGames &8&l>> &e%player% &7has answered &e%position%&7!'
   command:
     current:
       answer: '&fAnswer: &7&o''%answer%&7&o'''

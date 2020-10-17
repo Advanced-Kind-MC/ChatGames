@@ -131,4 +131,21 @@ public class Util {
 
 		return success;
 	}
+
+	private static final String[] ordinalSufixes = new String[] { "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th" };
+	/**
+	 * Returns the ordinal as a String
+	 * @param number number to turn into the Ordinal
+	 * @return Ordinal i.e. 1st for 1, 2nd for 2, etc.
+	 */
+	public static final String getOrdinal(int number){
+		switch (number % 100) {
+		case 11:
+		case 12:
+		case 13:
+			return number + "th";
+		default:
+			return number + ordinalSufixes[number % 10];
+		}
+	}
 }
