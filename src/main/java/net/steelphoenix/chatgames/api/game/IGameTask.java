@@ -2,8 +2,8 @@ package net.steelphoenix.chatgames.api.game;
 
 import java.util.Collection;
 
-import net.steelphoenix.annotations.NotNull;
-import net.steelphoenix.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public interface IGameTask extends Runnable {
 	/**

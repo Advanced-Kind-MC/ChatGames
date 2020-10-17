@@ -7,7 +7,7 @@ import java.util.logging.Level;
 
 import org.bukkit.configuration.ConfigurationSection;
 
-import net.steelphoenix.annotations.NotNull;
+import org.jetbrains.annotations.NotNull;
 import net.steelphoenix.chatgames.api.ICGPlugin;
 import net.steelphoenix.chatgames.api.game.Generator;
 import net.steelphoenix.chatgames.api.game.Question;

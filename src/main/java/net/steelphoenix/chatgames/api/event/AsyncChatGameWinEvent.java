@@ -3,9 +3,9 @@ package net.steelphoenix.chatgames.api.event;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 
-import net.steelphoenix.annotations.Contract;
-import net.steelphoenix.annotations.NotNull;
-import net.steelphoenix.annotations.Nullable;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import net.steelphoenix.chatgames.api.game.IGame;
 import net.steelphoenix.chatgames.api.game.Question;
 import net.steelphoenix.chatgames.util.messaging.Message;

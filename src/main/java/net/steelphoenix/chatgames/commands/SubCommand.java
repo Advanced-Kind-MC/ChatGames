@@ -11,8 +11,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
-import net.steelphoenix.annotations.NotNull;
-import net.steelphoenix.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import net.steelphoenix.chatgames.api.ICGPlugin;
 import net.steelphoenix.chatgames.util.Util;
 import net.steelphoenix.chatgames.util.messaging.Message;

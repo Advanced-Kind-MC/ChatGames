@@ -15,8 +15,8 @@ import javax.script.ScriptEngineManager;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import net.steelphoenix.annotations.NotNull;
-import net.steelphoenix.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import net.steelphoenix.chatgames.api.ChatGameGenerator;
 import net.steelphoenix.chatgames.api.ICGPlugin;
 import net.steelphoenix.chatgames.api.Leaderboard;

@@ -1,6 +1,6 @@
 package net.steelphoenix.chatgames.api.game;
 
-import net.steelphoenix.annotations.NotNull;
+import org.jetbrains.annotations.NotNull;
 
 public interface Question {
 	/**

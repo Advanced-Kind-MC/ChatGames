@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 
-import net.steelphoenix.annotations.NotNull;
-import net.steelphoenix.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import net.steelphoenix.chatgames.api.ICGPlugin;
 import net.steelphoenix.chatgames.commands.SubCommand;
 import net.steelphoenix.chatgames.util.Util;

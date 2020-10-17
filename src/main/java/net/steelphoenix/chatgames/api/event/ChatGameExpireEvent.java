@@ -2,7 +2,7 @@ package net.steelphoenix.chatgames.api.event;
 
 import org.bukkit.event.HandlerList;
 
-import net.steelphoenix.annotations.NotNull;
+import org.jetbrains.annotations.NotNull;
 import net.steelphoenix.chatgames.api.game.IGame;
 
 /**

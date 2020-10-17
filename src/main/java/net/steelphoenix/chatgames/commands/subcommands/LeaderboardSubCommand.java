@@ -9,7 +9,7 @@ import java.util.UUID;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 
-import net.steelphoenix.annotations.NotNull;
+import org.jetbrains.annotations.NotNull;
 import net.steelphoenix.chatgames.api.ICGPlugin;
 import net.steelphoenix.chatgames.commands.SubCommand;
 import net.steelphoenix.chatgames.util.Util;

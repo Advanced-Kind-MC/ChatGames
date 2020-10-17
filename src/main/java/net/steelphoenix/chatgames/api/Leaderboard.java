@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.UUID;
 
-import net.steelphoenix.annotations.Contract;
-import net.steelphoenix.annotations.NotNull;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A Leaderboard should always be accessed asynchronously.

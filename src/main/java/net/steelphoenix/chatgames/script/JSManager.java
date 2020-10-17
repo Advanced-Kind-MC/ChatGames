@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
 
-import net.steelphoenix.annotations.NotNull;
+import org.jetbrains.annotations.NotNull;
 import net.steelphoenix.chatgames.api.ICGPlugin;
 import net.steelphoenix.chatgames.api.Reloadable;
 import net.steelphoenix.chatgames.api.game.Generator;

@@ -2,7 +2,7 @@ package net.steelphoenix.chatgames.script;
 
 import javax.script.Bindings;
 
-import net.steelphoenix.annotations.NotNull;
+import org.jetbrains.annotations.NotNull;
 import net.steelphoenix.chatgames.api.game.Question;
 import net.steelphoenix.core.util.Validate;
 

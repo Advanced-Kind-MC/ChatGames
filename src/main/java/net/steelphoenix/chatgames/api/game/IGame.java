@@ -1,7 +1,7 @@
 package net.steelphoenix.chatgames.api.game;
 
-import net.steelphoenix.annotations.Contract;
-import net.steelphoenix.annotations.NotNull;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 public interface IGame {
 	/**

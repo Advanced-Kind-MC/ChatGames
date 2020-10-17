@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.regex.Pattern;
 
 import net.md_5.bungee.api.ChatColor;
-import net.steelphoenix.annotations.NotNull;
+import org.jetbrains.annotations.NotNull;
 import net.steelphoenix.chatgames.api.ICGPlugin;
 import net.steelphoenix.chatgames.config.IConfig;
 import net.steelphoenix.chatgames.config.YAMLConfig;
@@ -17,7 +17,6 @@ import net.steelphoenix.chatgames.util.messaging.annotations.ConfigBase;
 import net.steelphoenix.chatgames.util.messaging.annotations.ConfigValue;
 import net.steelphoenix.core.util.Validate;
 
-@net.steelphoenix.annotations.Util
 public class Util {
 	private Util() {
 		// Nothing

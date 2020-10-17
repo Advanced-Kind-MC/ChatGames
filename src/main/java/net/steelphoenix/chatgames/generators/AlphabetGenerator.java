@@ -2,7 +2,7 @@ package net.steelphoenix.chatgames.generators;
 
 import org.apache.commons.lang.Validate;
 
-import net.steelphoenix.annotations.NotNull;
+import org.jetbrains.annotations.NotNull;
 import net.steelphoenix.chatgames.api.game.Generator;
 import net.steelphoenix.chatgames.api.game.Question;
 import net.steelphoenix.chatgames.util.messaging.Message;

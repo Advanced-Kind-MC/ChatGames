@@ -18,7 +18,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import com.google.common.io.Files;
 
-import net.steelphoenix.annotations.NotNull;
+import org.jetbrains.annotations.NotNull;
 import net.steelphoenix.core.util.Validate;
 
 public class YAMLConfig extends YamlConfiguration implements IConfig {

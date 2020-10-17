@@ -1,6 +1,6 @@
 package net.steelphoenix.chatgames.api.game;
 
-import net.steelphoenix.annotations.NotNull;
+import org.jetbrains.annotations.NotNull;
 import net.steelphoenix.core.api.registry.Identifiable;
 
 public interface Generator extends Identifiable<String> {

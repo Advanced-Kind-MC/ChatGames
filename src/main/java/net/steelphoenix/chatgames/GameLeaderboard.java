@@ -8,7 +8,7 @@ import java.util.Map.Entry;
 import java.util.UUID;
 import java.util.logging.Level;
 
-import net.steelphoenix.annotations.NotNull;
+import org.jetbrains.annotations.NotNull;
 import net.steelphoenix.chatgames.api.ICGPlugin;
 import net.steelphoenix.chatgames.api.Leaderboard;
 import net.steelphoenix.chatgames.util.Util;

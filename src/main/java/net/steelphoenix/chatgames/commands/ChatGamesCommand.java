@@ -12,7 +12,7 @@ import org.bukkit.command.PluginCommand;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import net.steelphoenix.annotations.NotNull;
+import org.jetbrains.annotations.NotNull;
 import net.steelphoenix.chatgames.api.ICGPlugin;
 import net.steelphoenix.chatgames.commands.subcommands.CurrentSubCommand;
 import net.steelphoenix.chatgames.commands.subcommands.LeaderboardSubCommand;

@@ -1,1 +1,8 @@
 **/DefaultGenerator.java
+src/main/java/net/steelphoenix/core
+target
+.classpath
+.project
+.settings
+.vscode
+.vscode/settings.json

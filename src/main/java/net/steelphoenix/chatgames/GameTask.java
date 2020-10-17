@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.bukkit.scheduler.BukkitTask;
 
-import net.steelphoenix.annotations.NotNull;
-import net.steelphoenix.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import net.steelphoenix.chatgames.api.ICGPlugin;
 import net.steelphoenix.chatgames.api.event.ChatGameStartEvent;
 import net.steelphoenix.chatgames.api.game.Generator;

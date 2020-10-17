@@ -2,7 +2,7 @@ package net.steelphoenix.chatgames.generators;
 
 import javax.script.ScriptException;
 
-import net.steelphoenix.annotations.NotNull;
+import org.jetbrains.annotations.NotNull;
 import net.steelphoenix.chatgames.api.ICGPlugin;
 import net.steelphoenix.chatgames.api.game.Question;
 import net.steelphoenix.core.util.RandomUtil;

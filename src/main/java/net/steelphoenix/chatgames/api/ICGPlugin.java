@@ -7,8 +7,8 @@ import javax.script.ScriptEngine;
 
 import org.bukkit.plugin.Plugin;
 
-import net.steelphoenix.annotations.NotNull;
-import net.steelphoenix.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import net.steelphoenix.chatgames.api.game.IGameTask;
 import net.steelphoenix.chatgames.config.IConfig;
 import net.steelphoenix.core.api.database.IDatabase;
