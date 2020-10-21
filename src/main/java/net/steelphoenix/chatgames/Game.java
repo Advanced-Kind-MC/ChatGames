@@ -49,8 +49,6 @@ public class Game implements IGame {
 		if(winner.contains(player))
 			return 0;
 		winner.add(player);
-		if(winner.size() >= 3)
-			end();
 		return winner.size();
 	}
 	@Override

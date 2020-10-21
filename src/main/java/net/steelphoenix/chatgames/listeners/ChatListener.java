@@ -19,7 +19,8 @@ public class ChatListener implements Listener {
 	public ChatListener(ICGPlugin plugin) {
 		this.plugin = Validate.notNull(plugin, "Plugin cannot be null");
 	}
-	@EventHandler(priority = EventPriority.MONITOR)
+	private static final int WINNER_COUNT = 1;
+	@EventHandler(priority = EventPriority.HIGHEST)
 	public final void onChat(AsyncPlayerChatEvent event) {
 		IGame game = plugin.getTask().getCurrentGame();
 
@@ -44,7 +45,7 @@ public class ChatListener implements Listener {
 		}
 
 		// Increment the player's score
-		for(int i = 3; i >= position; --i)
+		for(int i = WINNER_COUNT; i >= position; --i)
 			plugin.getLeaderboard().increment(player.getUniqueId());
 
 		// Broadcast the win
@@ -59,5 +60,8 @@ public class ChatListener implements Listener {
 		if (gameEvent.getWinMessage() != null) {
 			player.sendMessage(Util.color(gameEvent.getWinMessage()));
 		}
+
+		if(position == WINNER_COUNT)
+			game.end();
 	}
 }

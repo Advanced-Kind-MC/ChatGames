@@ -4,6 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.steelphoenix</groupId>
 	<artifactId>ChatGames</artifactId>
+	<name>ChatGames-Modified</name>
 	<version>10.0</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
