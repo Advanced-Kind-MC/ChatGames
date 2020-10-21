@@ -19,7 +19,7 @@ public class ChatListener implements Listener {
 	public ChatListener(ICGPlugin plugin) {
 		this.plugin = Validate.notNull(plugin, "Plugin cannot be null");
 	}
-	private static final int WINNER_COUNT = 1;
+	private static final int WINNER_COUNT = 3;
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public final void onChat(AsyncPlayerChatEvent event) {
 		IGame game = plugin.getTask().getCurrentGame();
