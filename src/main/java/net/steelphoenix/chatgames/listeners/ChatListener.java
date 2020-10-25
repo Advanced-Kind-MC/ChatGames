@@ -16,10 +16,13 @@ import net.steelphoenix.core.util.Validate;
 
 public class ChatListener implements Listener {
 	private final ICGPlugin plugin;
+
 	public ChatListener(ICGPlugin plugin) {
 		this.plugin = Validate.notNull(plugin, "Plugin cannot be null");
 	}
+
 	private static final int WINNER_COUNT = 3;
+
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public final void onChat(AsyncPlayerChatEvent event) {
 		IGame game = plugin.getTask().getCurrentGame();
@@ -40,17 +43,18 @@ public class ChatListener implements Listener {
 		}
 		event.setCancelled(true);
 		int position = game.setWinner(player.getUniqueId());
-		if(position == 0){
+		if (position == 0) {
 			return;
 		}
 
 		// Increment the player's score
-		for(int i = WINNER_COUNT; i >= position; --i)
+		for (int i = WINNER_COUNT; i >= position; --i)
 			plugin.getLeaderboard().increment(player.getUniqueId());
 
 		// Broadcast the win
-		((ChatGames) plugin).broadcast(Message.ANNOUNCEMENT_WIN.replace("%player%", player.getName()).replace("%position%",Util.getOrdinal(position)));
-		((ChatGames) plugin).broadcast(Message.ANNOUNCEMENT_TIME.replace("%time%", time));
+		((ChatGames) plugin)
+				.broadcast(Message.ANNOUNCEMENT_WIN.replace("%player%", player.getName()).replace("%position%",
+						Util.getOrdinal(position)) + "\n" + Message.ANNOUNCEMENT_TIME.replace("%time%", time));
 
 		// Event calling
 		AsyncChatGameWinEvent gameEvent = new AsyncChatGameWinEvent(game, player, message, answertime, position);
@@ -61,7 +65,7 @@ public class ChatListener implements Listener {
 			player.sendMessage(Util.color(gameEvent.getWinMessage()));
 		}
 
-		if(position == WINNER_COUNT)
+		if (position == WINNER_COUNT)
 			game.end();
 	}
 }
