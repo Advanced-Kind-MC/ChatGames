@@ -45,8 +45,8 @@ public class Game implements IGame {
 		this.active = false;
 	}
 	@Override
-	public final synchronized int setWinner(@NotNull UUID player) {
-		if(winner.contains(player))
+	public final synchronized int setWinner(@NotNull UUID player, int maxWinners) {
+		if(winner.contains(player) || winner.size() >= maxWinners)
 			return 0;
 		winner.add(player);
 		return winner.size();

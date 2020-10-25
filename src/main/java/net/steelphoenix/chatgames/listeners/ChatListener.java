@@ -42,7 +42,7 @@ public class ChatListener implements Listener {
 			return;
 		}
 		event.setCancelled(true);
-		int position = game.setWinner(player.getUniqueId());
+		int position = game.setWinner(player.getUniqueId(), WINNER_COUNT);
 		if (position == 0) {
 			return;
 		}

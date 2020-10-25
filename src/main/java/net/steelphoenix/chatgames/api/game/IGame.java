@@ -34,7 +34,7 @@ public interface IGame {
 	 * @param player the UUID of the Player that wins
 	 * @return the position of the winner, 0 if he already won
 	 */
-	public int setWinner(@NotNull UUID player);
+	public int setWinner(@NotNull UUID player, int maxWinners);
 	/**
 	 * End this game.
 	 */
