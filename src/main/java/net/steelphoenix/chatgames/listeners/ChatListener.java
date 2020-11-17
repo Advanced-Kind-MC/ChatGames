@@ -23,7 +23,7 @@ public class ChatListener implements Listener {
 
 	private static final int WINNER_COUNT = 3;
 
-	@EventHandler(priority = EventPriority.HIGHEST)
+	@EventHandler(priority = EventPriority.LOW)
 	public final void onChat(AsyncPlayerChatEvent event) {
 		IGame game = plugin.getTask().getCurrentGame();
 
