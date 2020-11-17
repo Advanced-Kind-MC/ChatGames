@@ -69,7 +69,7 @@ public abstract class ArithmeticGenerator implements Generator {
 			// Preconditions
 			Validate.notNull(input, "Input cannot be null");
 
-			return getAnswer().replaceAll("\\.0+", "").equalsIgnoreCase(input.replaceAll("\\.0+", ""));
+			return getAnswer().replaceAll("\\.0+$", "").equalsIgnoreCase(input.replaceAll("\\.0+$", ""));
 		}
 	}
 }
