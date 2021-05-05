@@ -1,5 +1,6 @@
 package net.steelphoenix.chatgames.api.event;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 
@@ -24,7 +25,7 @@ public class AsyncChatGameWinEvent extends ChatGameEvent {
 	private String win;
 	private int placing;
 	public AsyncChatGameWinEvent(IGame game, Player player, String answer, long answerTime, int placing) {
-		super(game, true);
+		super(game, !Bukkit.isPrimaryThread());
 		this.player = Validate.notNull(player, "Player cannot be null");
 		this.answer = Validate.notNull(answer, "Answer cannot be null");
 		this.answerTime = answerTime;
